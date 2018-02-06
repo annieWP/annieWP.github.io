@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>独家记忆</title>
+	<style>
+	#div{
+		width:274px;height:383px;border:1px solid pink;background:#f1f1f1;background:url(1314.png) no-repeat;
+
+	}
+	h2{color:pink;}
+	img{width:274px}
+	</style>
+	<script>
+		window.onload=function(){
+			var odiv=document.getElementById('div');
+			var ospan=document.getElementById('span');
+			var otext=document.getElementById('text');
+			var obtn=document.getElementById('btn');
+			obtn.onclick=function(){
+				odiv.innerHTML+=otext.value+'<br/>';
+				otext.value='';
+			};
+}
+	</script>
+</head>
+<body>
+<h2>我喜欢你 是我独家的记忆</h2>
+<img src="ai.png" />
+<div id="div"></div>
+<span id="span">萍妹妹:</span>
+<input id="text" type="text" value"" />
+<input id="btn" type="button" value="发送" />
+</body>
+</html>
