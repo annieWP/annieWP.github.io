@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hello</title>
+<meta charset="utf-8" />
+<style>
+#content{width:400px;height:400px;border:10px solid #ccc;margin:40px auto 0;position:relative;}
+#content a{width:40px;height:40px;background:#000;border:5px solid #fff;top:175px;position:absolute;color:#fff;text-align:center;text-decoration:none;line-height:40px;font-size:30px;font-weight:bold;opacity:0.4;}
+#content a:hover{width:40px;height:40px;background:#000;border:5px solid #fff;top:175px;position:absolute;color:#fff;text-align:center;text-decoration:none;line-height:40px;font-size:30px;font-weight:bold;opacity:0.8;}
+#prev{left:10px;}
+#next{right:10px;}
+#text{position:absolute;bottom:0; left:0;width:400px;height:30px;color:#fff;background:black;text-align:30px;text-align:center;opacity:0.8;margin:0;}
+#span{position:absolute;top:0; left:0;width:400px;height:30px;color:#fff;background:black;text-align:30px;text-align:center;opacity:0.8;}
+#img{width:400px;height:400px;}
+</style>
+</head>
+<body>
+<div id="content">
+<a id="prev" href="javascript:void(0);">&lt;</a>
+<a id="next" href="javascript:void(0);">&gt;</a>
+<p id="text">图片正在加载...</p>
+<span id="span">正在计算中...</span>
+<img id="img"/>
+</div>
+<script>
+var oprev=document.getElementById('prev');
+var onext=document.getElementById('next');
+var ospan=document.getElementById('span');
+var otext=document.getElementById('text');
+var oimg=document.getElementById('img');
+var arrUrl=['img/1.gif','img/2.gif','img/3.gif','img/4.gif']
+var arrText=['萍妹妹','龙宝宝','么么哒','爱你呦'];
+var num=0;
+
+function tab(){ospan.innerHTML=num+1+'/'+arrText.length;
+otext.innerHTML=arrText[num];
+oimg.src=arrUrl[num];}
+tab();
+
+onext.onclick=function(){
+	num++
+	if(num==4){num=0;}
+tab();
+
+};
+
+oprev.onclick=function(){
+	num--
+	if(num==-1){num=0;}
+tab();
+
+};
+
+</script>
+</body>
+</html>

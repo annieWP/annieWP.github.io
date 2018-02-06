@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>你的名字</title>
+<style>
+#content{border:1px solid #ccc;width:900px;height:700px;top:30px;left:330px;position:relative;}
+#content a{width:100px;height:700px;background:pink;color:white;position:absolute;font-size:100px;font-weight:bold;line-height:680px;text-align:center;opacity:0.8;text-decoration:none;opacity:0.6;}
+#content a:hover{width:100px;height:700px;background:pink;color:white;position:absolute;font-size:100px;font-weight:bold;line-height:680px;text-align:center;opacity:0.8;text-decoration:none;}
+#prev{left:0;}
+#next{right:0;}
+#span{width:900px;height:30px;position:absolute;top:0;left:0;text-align:center;line-height:30px;font-size:16px;background:black;color:white;opacity:0.5;}
+
+#p{width:900px;height:30px;position:absolute;bottom:0;left:0;text-align:center;line-height:30px;font-size:16px;background:black;color:white;margin:0;opacity:0.5;}
+#img{width:680px; height:700px;left:110px;position:absolute;}
+</style>
+</head>
+<body>
+<div id="content">
+<a id="prev" href="javascript:void(0);">&lt;</a>
+<a id="next" href="javascript:void(0);">&gt;</a>
+<img id="img" />
+<span id="span">正在计算.....</span>
+<p id="p">正在加载中.....</p>
+
+</div>
+<script>
+var ocontent=document.getElementById('content');
+var oprev=document.getElementById('prev');
+var onext=document.getElementById('next');
+var oimg=document.getElementById('img');
+var ospan=document.getElementById('span');
+var op=document.getElementById('p');
+var num=0;
+var arrUrl=['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+var arrp=['休问我 彼为谁 九月露沾衣 是我 待君会','我不知道你的名字 但我喜欢你','也许我会忘记你的名字 但是我一辈子会记得喜欢你的感觉','只要记住你的名字 不管你在世界哪个地方 我都会去找你'];
+
+function tap(){ospan.innerHTML=num+1+'/'+arrp.length;
+op.innerHTML=arrp[num];
+oimg.src=arrUrl[num];}
+tap()
+onext.onclick=function(){
+	num++;
+	if(num==4){num=3}
+	tap()
+}
+oprev.onclick=function(){
+	num--;
+	if(num==-1){num=0}
+	tap()
+}
+</script>
+</body>
+</html>
